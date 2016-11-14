@@ -100,6 +100,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        odwroc_znak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (text == null) {
+                    text.setText("");
+                } else {
+                    val1 = Float.parseFloat(text.getText() + "");
+                    text.setText(val1 * (-1) + "");
+                }
+            }
+        });
+
         wynik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
