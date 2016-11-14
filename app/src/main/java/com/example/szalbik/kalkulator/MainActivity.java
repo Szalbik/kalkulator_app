@@ -12,8 +12,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button jeden, zero, dwa, trzy, cztery, piec, szesc, siedem, osiem, dziewiec, kropka, wynik, dodac, odjac, mnozenie, dzielenie, modulo, del, c, odwroc_znak, mc,mr,mp;
     TextView text;
-    float val1, val2;
-    boolean mAddition , mSubtract ,mMultiplication ,mDivision ;
+    float val1, val2, m;
+    boolean mAddition , mSubtract ,mMultiplication ,mDivision, mMod ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +112,44 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        modulo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (text == null) {
+                    text.setText("");
+                } else {
+                    val1 = Float.parseFloat(text.getText() + "");
+                    text.setText(null);
+                    mMod = true;
+                }
+            }
+        });
+
+        mp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (text == null) {
+                    text.setText("");
+                } else {
+                    m = Float.parseFloat(text.getText() + "");
+                }
+            }
+        });
+
+        mr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                text.setText(m + "");
+            }
+        });
+
+        mc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m = 0;
+            }
+        });
+
         wynik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,6 +174,11 @@ public class MainActivity extends AppCompatActivity {
                 if (mDivision == true){
                     text.setText(val1 / val2+"");
                     mDivision=false;
+                }
+
+                if (mMod == true){
+                    text.setText(val1 % val2+"");
+                    mMod=false;
                 }
             }
         });

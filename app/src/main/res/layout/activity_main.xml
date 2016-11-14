@@ -90,7 +90,7 @@
                 android:layout_weight="1" />
 
             <Button
-                android:text="\"
+                android:text="/"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/button12"
